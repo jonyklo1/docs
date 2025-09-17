@@ -20,12 +20,27 @@
             ]
           },
           {
-            "group": "Using Flowi",
+            "group": "Finding Leads",
             "pages": [
-              "user-guide/finding-leads",
-              "user-guide/asking-questions",
-              "user-guide/exports",
+              "user-guide/finding-leads"
+            ]
+          },
+          {
+            "group": "Asking Questions",
+            "pages": [
+              "user-guide/asking-questions"
+            ]
+          },
+          {
+            "group": "Managing Leads",
+            "pages": [
               "user-guide/sort-and-filter"
+            ]
+          },
+          {
+            "group": "Exporting Data",
+            "pages": [
+              "user-guide/exports"
             ]
           }
         ]
