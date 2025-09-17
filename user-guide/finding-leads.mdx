@@ -1,61 +1,81 @@
 ---
 title: "Find new leads"
-description: "Search, filter, and organize prospects in the leads grid"
+description: "Use Find New Customers to find businesses by type and location."
 ---
 
 ## Overview
 
-Use Flowi to discover and curate high-quality prospects fast. The leads workspace includes two tabs — Companies and People — with a spreadsheet-like grid, fast server-side loading, and powerful filters.
+Use Find New Customers to discover businesses and organizations from a simple, natural‑language request. Results stream into the grid, and you can keep expanding in batches until the area is covered.
 
 <Tip>
-  The People tab includes email-specific actions. Use Companies for firm-level research and People for contact-level actions.
+  Toggle between <b>🔍 Find New Customers</b> and <b>💡 Ask Questions</b> at the bottom of the input. Use Find New Customers to <i>find businesses</i>. Use Ask Questions to <i>research existing leads</i> (contacts, CEOs, social links, emails, etc.).
+  
 </Tip>
 
-## Find prospects
+## How searching works
+
+- **One business type + one location**: Specify a single business type (e.g., "coffee shop") and a single geography (city, state/province, or country).
+- **Up to 100 results per search**: Ask for “10”, “50”, or “100”. If you say “all/every”, the system searches across multiple neighbourhoods; ask for “100 more” to continue until the area is covered.
+- **Smart coverage**: For broad geographies (states/countries), Flowi prioritizes where to look next and avoids duplicates while tracking progress.
+- **What’s supported**: Businesses and public places. No people/influencer searches, and no filters beyond business type + location.
+- **Clarifications**: If a location is ambiguous (e.g., “Kingston”) or you include multiple types/locations, you’ll be asked to clarify before the search runs.
+
+<Warning>
+  Unsupported filters (e.g., owner beliefs, political values, “female‑owned”) aren’t applied in search. Run the search first, then switch to <b>Ask Questions</b> to research and filter for these attributes.
+</Warning>
+
+## Run a search
 
 <Steps>
-<Step title="Describe your ideal customer">
+<Step title="Switch to Find New Customers">
 
-Type what you’re looking for (industry, role, tech, region, size, etc.). Results stream into the grid as they’re found.
-
-</Step>
-<Step title="Refine with filters">
-
-Open the Filters panel and combine attributes (e.g., job title contains "marketing", company website includes ".ai", has LinkedIn). Save frequently used filters for reuse.
+Click the toggle chips below the input and select <b>🔍 Find New Customers</b>.
 
 </Step>
-<Step title="Customize columns">
+<Step title="Describe the businesses and location">
 
-Show only what matters. Toggle default columns (email, job title, website, LinkedIn, address, relevance) and reorder to fit your workflow.
+Type in plain English. Examples:
+
+- "Find 50 coffee shops in Toronto, Ontario, Canada"
+- "Hotels in Paris, France"
+- "All restaurants in Vancouver, British Columbia"
+
+Tips:
+- Include a clear geography (city, state/province, or country).
+- Ask for up to 100 per search. For more, say “100 more”.
 
 </Step>
-<Step title="Select the right leads">
+<Step title="Confirm the final query">
 
-Use checkboxes or click-to-select. Multi-select supports Shift/Command. Right‑click to open the context menu for bulk actions.
+You may be shown a short confirmation with the exact Type, Geography, and Amount, or a small list of close **type variations** (e.g., cafe, coffee house, espresso bar). Pick one or confirm to proceed.
+
+</Step>
+<Step title="Review streaming results and expand">
+
+Results populate the grid as they appear. If you need more, type “50 more” or “100 more” to continue. Flowi avoids duplicates and stops when the geography is exhausted.
+
+<Check>
+You see new rows appear in the grid and the total count increases.
+</Check>
+
+</Step>
+<Step title="Prioritize and enrich">
+
+Use the Relevance column to sort, then switch to <b>Ask Questions</b> to research selected leads (websites, social, contacts, and deeper analysis).
 
 </Step>
 </Steps>
 
-## Bulk actions
+## Supported vs unsupported requests
 
-- **Add to List…**: Save selected rows to a named list for later work and collaboration.
-- **Find Emails…**: People tab only. Queue email discovery for selected contacts.
-- **Download CSV**: Export selected rows for sharing or offline analysis.
-- **Delete**: Permanently remove leads (company or people). This cannot be undone.
-
-<Warning>
-  Deletions are permanent. Consider exporting first if you might need the data later.
-</Warning>
-
-## Lists and saved work
-
-- **Saved lists**: Create multiple lists, drag to reorder, and switch context quickly.
-- **Views**: Keep different column/ordering preferences per tab.
+- **Supported**: “Find 100 nail salons in Miami, Florida”, “Coffee shops in Kingston, Ontario”, “Hotels in Canada”.
+- **Needs clarification**: “Find cafes in Kingston” (which Kingston?), “restaurants in Toronto and Vancouver” (choose one), “restaurants and bars in NYC” (choose one type).
+- **Unsupported (filter at research time)**: “cafes with female owners”, “eco‑friendly restaurants”, “bars that support a political party”.
+- **Not supported**: People/influencer searches.
 
 ## Tips
 
-- Use the Companies tab to cast a wide net, then drill down into People and run email discovery.
-- Right‑click any selection to open actions; keyboard selection works across virtualized rows.
-- Relevance flags and research columns help you prioritize who to work on next.
-
+- Use full place names (e.g., “Toronto, Ontario, Canada”) to avoid ambiguity.
+- Saying “all” begins a multi‑neighbourhood sweep; then ask for “100 more” until done.
+- If you repeat a search, the system detects prior work and focuses on fresh results.
 

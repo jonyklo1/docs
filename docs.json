@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "willow",
+  "theme": "aspen",
   "name": "Flowi Docs",
   "colors": {
     "primary": "#60A5FA",
@@ -48,8 +48,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/flowilogo.png",
-    "dark": "/logo/flowilogo.png"
+    "light": "/logo/flowilogowithnobg.png",
+    "dark": "/logo/flowilogowithnobg.png"
   },
   "navbar": {
     "links": [
@@ -74,5 +74,8 @@
   },
   "footer": {
     "socials": {}
-  }
+  },
+  "head": [
+    "<link rel=\"stylesheet\" href=\"/logo.css\" />"
+  ]
 }

@@ -1,47 +1,110 @@
 ---
 title: "Ask questions about leads"
-description: "Run AI research on single or multiple leads and populate research columns"
+description: "Run AI research on one or many selected leads; answers fill research columns."
 ---
 
 ## Overview
 
-Ask Flowi questions about companies or people and stream answers directly into the grid. Answers appear in dedicated research columns with live progress and references.
+Ask questions about companies or people and stream answers directly into the grid. Responses fill dedicated research columns with live progress and references.
 
-## Ways to ask
+<Tip>
+  Toggle between <b>💡 Ask Questions</b> and <b>🔍 Find New Customers</b> at the bottom of the input. Use Ask Questions to <i>research selected leads</i>; use Find New Customers to <i>discover new businesses</i>.
+</Tip>
+
+<Info>
+  You can research a single lead or a multi‑selection. For people leads that haven’t been deep researched, you’ll be prompted to run deep research first.
+</Info>
+
+## Run a question
 
 <Steps>
-<Step title="Ask about a single lead">
+<Step title="Switch to Ask Questions">
 
-Select a row, right‑click, and choose **Ask about 1 lead**. Type your question (e.g., "What does this company do?", "What are recent product launches?").
-
-</Step>
-<Step title="Ask about multiple leads">
-
-Multi‑select rows, right‑click, and choose **Ask about N leads** to run the same question across your selection.
+Click the toggle chips below the input and select <b>💡 Ask Questions</b>.
 
 </Step>
-<Step title="Re‑ask saved questions">
+<Step title="Select one or more leads">
 
-Right‑click and choose **Re‑ask Questions…** to pick from your saved research prompts and re-run them for the current selection.
+Select a row in the grid (single) or multi‑select rows (Shift/Command). You can also open a lead in a tab and ask from there.
+
+<Warning>
+  Questions require a selected lead. People leads may require deep research before you can ask.
+</Warning>
+
+</Step>
+<Step title="Type your question">
+
+Ask in plain English (e.g., "What does this company do?", "Key decision makers", "Recent product launches").
+
+Optional: turn on <b>Deep Research</b> and choose target profiles (website, Instagram, LinkedIn, Facebook) for richer results.
+
+</Step>
+<Step title="Submit and monitor">
+
+Press Enter or click the send button. Progress streams into research columns; answers appear as they complete.
+
+<Check>
+You see status updates in the cells (processing → research → complete) and new text in the relevant research columns.
+</Check>
 
 </Step>
 </Steps>
 
+## Other ways to ask
+
+<Steps>
+<Step title="Ask about a single lead">
+
+Select a row, right‑click, and choose <b>Ask about 1 lead</b>. Type your question (e.g., "What does this company do?", "What are recent product launches?").
+
+</Step>
+<Step title="Ask about multiple leads">
+
+Multi‑select rows, right‑click, and choose <b>Ask about N leads</b> to run the same question across your selection.
+
+</Step>
+<Step title="Re‑ask saved questions">
+
+Right‑click and choose <b>Re‑ask Questions…</b> to pick from your saved research prompts and re-run them for the current selection.
+
+</Step>
+</Steps>
+
+## Use saved questions
+
+- Click the clock icon next to the input to open your saved questions.
+- Pick a question to fill the input or re‑ask it across the current selection.
+
+<Note>
+  Saved questions are typed: company vs person. Only matching questions are available for your current selection.
+</Note>
+
 ## Reading results
 
-- **Live status**: Cells show streaming progress (processing, social search, deep research).
+- **Live status**: Cells show streaming progress (processing, research, deep research when enabled).
 - **Answers**: Final responses render in research columns; overflow is truncated with a tooltip.
 - **References**: Click the info icon to view supporting sources when available.
 - **Quick re‑ask**: When a research cell is focused, click the small AI icon to re‑ask that specific question for the current row.
+
+<Info>
+  When information is partial, Flowi may deliver an initial answer and continue searching. If it finds more, you’ll see an updated or follow‑up answer.
+</Info>
 
 ## Deep research (optional)
 
 Use the Deep Research toggle to collect richer signals. You can target specific profiles (website, Instagram, LinkedIn, Facebook) when supported.
 
+<Tip>
+  Deep Research can improve coverage and precision for tougher questions, but may take longer and use additional credits.
+</Tip>
+
 ## Troubleshooting
 
 - **Insufficient credits**: You’ll see a credit dialog if a question can’t be queued. Upgrade or purchase credits to continue.
-- **No visible answers**: Ensure the research question’s column is visible in your current view; saved prompts stay available for reuse.
+- **No leads selected**: Select one or more rows before asking.
+- **People leads require deep research**: Turn on Deep Research or run deep research when prompted, then try again.
+- **No visible answers**: Ensure the research question’s column is visible in your current view; saved prompts remain available for reuse.
+- **Stopped early**: The stop button pauses UI updates only; processing may continue in the background and update cells when complete.
 
 ## Tips
 

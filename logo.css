@@ -1,0 +1,22 @@
+/* Flowi Docs: Navbar logo sizing */
+
+/* Desktop size */
+.navbar .nav-logo img,
+.topbar .logo img,
+header .logo img,
+img[src*="/logo/flowilogowithnobg"] {
+  height: 56px !important;
+  width: auto !important;
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .navbar .nav-logo img,
+  .topbar .logo img,
+  header .logo img,
+  img[src*="/logo/flowilogowithnobg"] {
+    height: 40px !important;
+  }
+}
+
+

@@ -1,17 +1,19 @@
 ---
 title: "Exports"
-description: "Export selected leads to CSV with research and transformations"
+description: "Export selected leads to CSV with research answers, optional explanations, and per‑column transforms."
 ---
 
 ## Overview
 
-Export selected leads to CSV with your current column configuration, including research answers and optional explanations. You can also transform columns before downloading.
+Export selected leads to CSV based on your current view and column order. Include research answers, optionally add explanation columns, and apply lightweight transforms before download. A live preview shows exactly what will be exported.
 
 ## How exporting works
 
 - **Selection-based**: Exports only the leads you have selected in the grid. If nothing is selected, the dialog shows a message and disables download.
 - **Current view**: Uses your visible columns and custom order, matching what you see in the grid.
 - **Tabs**: Works from Companies or People tabs; relationship columns adapt accordingly.
+- **Preview-first**: See a live preview of the CSV and which columns are transformed before downloading.
+- **Explanations toggle**: Optionally add an explanation column for each research question.
 
 ## Columns included
 
@@ -19,16 +21,16 @@ Export selected leads to CSV with your current column configuration, including r
 - **Default fields**: Address, website, phone, email, LinkedIn, created at, etc. Only columns visible in your view are exported.
 - **Special columns**: Relationship columns (e.g., People on Companies tab; Companies on People tab) export as comma‑separated values.
 - **Research answers**: Each selected research question becomes a column with the final displayed answer.
-- **Explanations (optional)**: Toggle "Include explanations" to add a companion column for each research question with the model’s reasoning. Headers use the question label plus “_explanation”.
-- **Cross‑tab research**: If you include research questions from the opposite tab, their answers export too, with appropriate labels.
+- **Explanations (optional)**: Toggle Include explanations to add a companion column for each research question with the model’s reasoning. Headers use the question label plus “_explanation”.
+- **Cross‑tab research**: If you include research questions from the opposite tab, those answers export too with clear labels.
 
 ## Transform columns (optional)
 
 Before downloading, you can apply lightweight transformations to exported values:
 
 - **Per‑column prompts**: Enter a short instruction per column (e.g., "Summarize in 10 words", "Convert to uppercase").
+- **Apply per column**: Click Apply Transform for each column you want to change.
 - **Caching**: Previously computed transforms may be reused for identical values to speed things up.
-- **Apply selectively**: Apply transforms for a single column or all columns with prompts.
 - **Non‑destructive**: Transforms affect only the export file; your underlying data remains unchanged.
 
 ## File format and naming
@@ -46,11 +48,15 @@ Use the checkboxes or multi‑select to choose companies or people to export.
 <Step title="Open the export dialog">
 Right‑click and choose "Download N leads (CSV)".
 </Step>
-<Step title="Configure options">
-Optionally enable explanations and add any column transforms.
+<Step title="Configure options and transforms">
+Toggle Include explanations if you want reasoning columns. Optionally add per‑column transform prompts and click Apply Transform for each column.
 </Step>
-<Step title="Download">
-Click "Download CSV" to save the file.
+<Step title="Review and download">
+Confirm the preview looks right (column order, transformed values), then click Download CSV.
+
+<Check>
+The file name is `leads_YYYY-MM-DD.csv`, columns match your view order, and the row count equals your selection.
+</Check>
 </Step>
 </Steps>
 
@@ -59,3 +65,4 @@ Click "Download CSV" to save the file.
 - Export currently reflects only selected leads; bulk export of an entire filtered view requires selecting those rows first.
 - If a research question has no final answer, the cell will be empty.
 - Explanation columns are only added when the toggle is enabled at export time.
+- Transforms apply to the exported file only; they do not update grid data.
