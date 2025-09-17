@@ -1,0 +1,53 @@
+---
+title: "Sort and filter"
+description: "Control your view with precise column filters and one-click sorting"
+---
+
+## Overview
+
+Use the header controls to narrow results and order rows:
+
+- **Filters**: Add column conditions, group with AND/OR, and apply source/status filters.
+- **Sort**: Choose a column and toggle ascending/descending. Clear with one click.
+
+## Column filters
+
+Open the Filters menu in the header.
+
+- **Type-aware operators**: Text columns support contains, equals, starts/ends with; boolean-style columns support is_yes/is_no and emptiness checks.
+- **Quick defaults**: The operator defaults to the most sensible choice based on the selected column.
+- **Multiple conditions per column**: Add conditions and combine them with AND or OR.
+- **Multi-value input (OR)**: For text fields, you can separate values with `|` (pipe) to match any of them.
+- **Clear all**: Removes every filter and resets the grid.
+
+### Add a new filter
+
+<Steps>
+<Step title="Pick a column">Choose any visible field for the active tab.</Step>
+<Step title="Choose an operator">Operators adapt to the column type.</Step>
+<Step title="Enter a value">For boolean columns, select True/False.</Step>
+<Step title="Apply">Add a single condition or build a grouped filter (AND/OR).</Step>
+</Steps>
+
+## Source and research status filters
+
+In the Filters menu, you can refine by:
+
+- **Source**: All sources, Custom Upload, or Search Results.
+- **Deep Research Status**: All, Researched, or Not Researched.
+
+These filters combine with your column filters and update instantly.
+
+## Sorting
+
+Open the Sort menu in the header.
+
+- **One-click toggle**: Select a column to sort; repeats toggle between ascending/descending.
+- **Clear sort**: Resets ordering to default.
+- **Visual feedback**: The button reflects when a sort is active.
+
+## Tips
+
+- Filters and sorting apply immediately to the grid (server-side friendly).
+- The Filters button shows a count when any filters are active.
+

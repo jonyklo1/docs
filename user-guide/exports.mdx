@@ -1,0 +1,61 @@
+---
+title: "Exports"
+description: "Export selected leads to CSV with research and transformations"
+---
+
+## Overview
+
+Export selected leads to CSV with your current column configuration, including research answers and optional explanations. You can also transform columns before downloading.
+
+## How exporting works
+
+- **Selection-based**: Exports only the leads you have selected in the grid. If nothing is selected, the dialog shows a message and disables download.
+- **Current view**: Uses your visible columns and custom order, matching what you see in the grid.
+- **Tabs**: Works from Companies or People tabs; relationship columns adapt accordingly.
+
+## Columns included
+
+- **Lead Name**: The primary display name for the row (company or person).
+- **Default fields**: Address, website, phone, email, LinkedIn, created at, etc. Only columns visible in your view are exported.
+- **Special columns**: Relationship columns (e.g., People on Companies tab; Companies on People tab) export as comma‑separated values.
+- **Research answers**: Each selected research question becomes a column with the final displayed answer.
+- **Explanations (optional)**: Toggle "Include explanations" to add a companion column for each research question with the model’s reasoning. Headers use the question label plus “_explanation”.
+- **Cross‑tab research**: If you include research questions from the opposite tab, their answers export too, with appropriate labels.
+
+## Transform columns (optional)
+
+Before downloading, you can apply lightweight transformations to exported values:
+
+- **Per‑column prompts**: Enter a short instruction per column (e.g., "Summarize in 10 words", "Convert to uppercase").
+- **Caching**: Previously computed transforms may be reused for identical values to speed things up.
+- **Apply selectively**: Apply transforms for a single column or all columns with prompts.
+- **Non‑destructive**: Transforms affect only the export file; your underlying data remains unchanged.
+
+## File format and naming
+
+- **Format**: CSV (UTF‑8) with a header row.
+- **Escaping**: Quotes and newlines in answers are normalized to keep CSV structure intact.
+- **Filename**: `leads_YYYY-MM-DD.csv` by default.
+
+## Steps to export
+
+<Steps>
+<Step title="Select leads in the grid">
+Use the checkboxes or multi‑select to choose companies or people to export.
+</Step>
+<Step title="Open the export dialog">
+Right‑click and choose "Download N leads (CSV)".
+</Step>
+<Step title="Configure options">
+Optionally enable explanations and add any column transforms.
+</Step>
+<Step title="Download">
+Click "Download CSV" to save the file.
+</Step>
+</Steps>
+
+## Notes and limitations
+
+- Export currently reflects only selected leads; bulk export of an entire filtered view requires selecting those rows first.
+- If a research question has no final answer, the cell will be empty.
+- Explanation columns are only added when the toggle is enabled at export time.
