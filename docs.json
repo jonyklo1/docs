@@ -42,6 +42,12 @@
             "pages": [
               "user-guide/exports"
             ]
+          },
+          {
+            "group": "Robots",
+            "pages": [
+              "user-guide/robots"
+            ]
           }
         ]
       }
