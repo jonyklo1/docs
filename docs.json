@@ -48,6 +48,12 @@
             "pages": [
               "user-guide/robots"
             ]
+          },
+          {
+            "group": "Changelog",
+            "pages": [
+              "changelog"
+            ]
           }
         ]
       }
