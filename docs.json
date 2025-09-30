@@ -45,9 +45,9 @@
             ]
           },
           {
-            "group": "Robots",
+            "group": "Agents",
             "pages": [
-              "user-guide/robots"
+              "user-guide/agents"
             ]
           }
         ]
