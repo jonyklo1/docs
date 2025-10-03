@@ -1,0 +1,209 @@
+---
+title: 'HubSpot Integration'
+description: 'Connect your HubSpot CRM to filter out existing leads during automated research'
+---
+
+## Overview
+
+The HubSpot integration allows you to automatically filter out leads that already exist in your HubSpot CRM when running agents. This helps you focus your research efforts on truly new prospects and avoid wasting time and credits on companies you're already working with.
+
+### How It Works
+
+The integration filters leads by **matching company domain names** between Flowi and your HubSpot CRM. When enabled, leads with domains matching companies in your HubSpot will be automatically skipped during the automated research phase.
+
+## Connecting HubSpot
+
+You can connect HubSpot in two ways:
+
+### Method 1: From Settings (Recommended)
+
+1. Navigate to **Settings** → **Integrations**
+2. Find the **HubSpot CRM** card
+3. Click **Connect HubSpot**
+4. Authorize Flowi in the popup window
+5. Once connected, the integration is available across all agents in your account
+
+### Method 2: From Agent Settings
+
+1. Open any agent's settings
+2. Navigate to the **Filters** section (between Search Schedule and Automated Research)
+3. Find the **HubSpot CRM Filter** section
+4. Click **Connect HubSpot**
+5. Authorize Flowi in the popup window
+
+<Note>
+HubSpot connection is **account-level** - connect once and use it across all your agents!
+</Note>
+
+## Configuring HubSpot Filtering
+
+Once connected, you can enable HubSpot filtering for individual agents:
+
+1. Open your agent's settings
+2. Navigate to the **Filters** section
+3. Toggle **Enable HubSpot filtering for this agent**
+4. Choose your filter mode (see below)
+
+## Filter Modes
+
+Flowi offers two filtering strategies to match your workflow:
+
+### Companies with Deals (Default)
+
+**Best for:** Active sales pipelines
+
+This mode only filters out companies that have **associated deals** in HubSpot. Companies in your CRM without deals will still be researched, allowing you to:
+
+- Re-engage dormant prospects
+- Research companies at different stages
+- Build comprehensive profiles for companies not yet in active deals
+
+**Example:** A coffee shop in your HubSpot without any deals → ✅ Will be researched
+
+### All Companies
+
+**Best for:** Strict deduplication
+
+This mode filters out **any company** that exists in your HubSpot CRM, regardless of deal status. Use this when you want to:
+
+- Avoid all existing CRM entries
+- Focus exclusively on net-new prospects
+- Maintain strict separation between new and existing leads
+
+**Example:** Any coffee shop in your HubSpot → ❌ Will be skipped
+
+## Domain Matching
+
+The integration matches leads using **company domain names**:
+
+- ✅ `example.com` (normalized)
+- ✅ `www.example.com` (normalized)
+- ✅ `https://example.com` (normalized)
+- ✅ `http://www.example.com` (normalized)
+
+All domain variations are automatically normalized for accurate matching.
+
+## Where Filtering Happens
+
+The HubSpot filter is applied at a specific point in your agent workflow:
+
+```
+1. Search Schedule  →  2. Research Filters  →  3. HubSpot Filter  →  4. Automated Research
+```
+
+This means:
+1. Agent finds leads based on your search criteria
+2. Research filters are applied (if configured)
+3. HubSpot filtering removes existing CRM entries
+4. Only new leads proceed to automated research
+
+<Tip>
+Combine HubSpot filtering with Research Filters to create powerful lead qualification workflows!
+</Tip>
+
+## Managing Your Connection
+
+### Viewing Connection Status
+
+Check your HubSpot connection status in **Settings** → **Integrations**. You'll see:
+- Connected account email
+- HubSpot Portal ID
+- Connection date
+
+### Disconnecting HubSpot
+
+<Warning>
+Disconnecting HubSpot removes the integration for **ALL agents** in your account.
+</Warning>
+
+To disconnect:
+
+1. Go to **Settings** → **Integrations**
+2. Click **Disconnect** on the HubSpot card
+3. Confirm the action in the dialog
+
+Alternatively, disconnect from any agent's filter settings using the same process.
+
+## Best Practices
+
+### 1. Use the Right Filter Mode
+
+- **Active sales team?** → Use "Companies with Deals" to allow re-engagement
+- **Building net-new lists?** → Use "All Companies" for strict deduplication
+
+### 2. Combine with Research Filters
+
+Stack HubSpot filtering with other research filters for precise targeting:
+
+```
+Example: Find coffee shops → Filter by revenue → Remove HubSpot entries → Research
+```
+
+### 3. Monitor Your Credits
+
+HubSpot filtering happens before research, so filtered leads **don't consume research credits**. This helps you:
+- Save credits on duplicates
+- Maximize ROI on research spend
+- Focus budget on new prospects
+
+### 4. Regular CRM Hygiene
+
+Keep your HubSpot CRM up to date for accurate filtering:
+- Ensure company domains are correctly entered
+- Update deal statuses regularly
+- Archive inactive companies if using "All Companies" mode
+
+## Troubleshooting
+
+### Leads Still Being Researched
+
+If leads matching HubSpot companies are still being researched:
+
+1. **Check filter is enabled** for that specific agent
+2. **Verify domain matching** - Ensure HubSpot companies have domain fields populated
+3. **Check filter mode** - "Companies with Deals" only filters companies with active deals
+
+### Connection Issues
+
+If you can't connect HubSpot:
+
+1. **Check popup blockers** - Ensure popups are allowed for Flowi
+2. **Verify permissions** - You need admin access to authorize HubSpot apps
+3. **Try again** - Close the popup and retry the connection
+
+### Filter Not Working
+
+If filtering isn't working as expected:
+
+1. **Verify connection** - Check Settings → Integrations for connection status
+2. **Check agent settings** - Ensure HubSpot filter is enabled for that agent
+3. **Review filter mode** - Confirm you're using the right mode for your use case
+
+## FAQ
+
+### Does this work with HubSpot free accounts?
+
+Yes! The HubSpot integration works with all HubSpot account types, including free accounts.
+
+### How often does Flowi sync with HubSpot?
+
+Filtering happens in real-time during each agent run. Flowi checks your HubSpot CRM every time an agent executes.
+
+### Can I use different filter modes for different agents?
+
+Yes! Each agent can have its own filter mode (Companies with Deals or All Companies).
+
+### Does this consume HubSpot API calls?
+
+Yes, but minimally. Flowi makes efficient batch requests to check company domains. Normal usage stays well within HubSpot's API limits.
+
+### What happens if I disconnect and reconnect?
+
+Your per-agent filter settings are preserved. You'll just need to reconnect your HubSpot account.
+
+---
+
+<Card title="Need Help?" icon="question" href="mailto:jon@getflowi.com">
+  Contact our support team for assistance with HubSpot integration
+</Card>
+

@@ -49,6 +49,12 @@
             "pages": [
               "user-guide/agents"
             ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "user-guide/integrations/hubspot"
+            ]
           }
         ]
       }
