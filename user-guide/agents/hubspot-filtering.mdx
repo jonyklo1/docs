@@ -1,0 +1,336 @@
+---
+title: "HubSpot CRM Filtering"
+description: "Skip existing CRM contacts and focus research on net-new prospects"
+---
+
+## Overview
+
+HubSpot CRM filtering is one of the most powerful features of agents. It automatically prevents wasted research credits by filtering out leads that already exist in your HubSpot CRM **before** the AI research runs.
+
+### Why Use HubSpot Filtering?
+
+**Save Research Credits:**
+- Filtered leads don't consume research credits
+- Only truly new prospects get researched
+- Maximize ROI on your AI spend
+
+**Avoid Duplicate Outreach:**
+- Prevent contacting existing customers
+- Skip prospects already in your pipeline
+- Focus on net-new opportunities
+
+**Flexible Filtering:**
+- Choose between two filter modes
+- Configure per-agent settings
+- Account-level connection (set up once)
+
+## Connection Setup
+
+HubSpot connection is **account-level** - connect once and use across all agents.
+
+### From Agent Settings
+
+1. Open any agent in the dashboard
+2. Navigate to the **Filters** section
+3. Find **HubSpot CRM Filter**
+4. Click **Connect HubSpot**
+5. Authorize Flowi in the popup window
+6. ✅ Integration is now available for all agents
+
+### From Settings Page
+
+Alternatively, connect from the central settings:
+
+1. Navigate to **Settings → Integrations**
+2. Find the **HubSpot CRM** card
+3. Click **Connect HubSpot**
+4. Authorize in popup
+5. Manage connection from settings anytime
+
+<Tip>We recommend connecting from Settings for easier ongoing management.</Tip>
+
+<Warning>Ensure your browser allows popups from Flowi for the OAuth flow to work.</Warning>
+
+## Filter Modes
+
+Choose the right filtering strategy for each agent:
+
+### Companies with Deals (Default)
+
+**Best for: Active sales pipelines**
+
+Only filters out companies that have **associated deals** in HubSpot. Companies without deals will still be researched.
+
+**Use Cases:**
+- Re-engage dormant prospects
+- Research all companies comprehensively
+- Pipeline has multiple stages
+- Some contacts don't have active deals
+
+**Example:**
+```
+Cafe Rosa in HubSpot but NO deals → ✅ Will be researched
+Cafe Verde in HubSpot WITH deals → ❌ Will be skipped
+```
+
+**When to Use:**
+- You want to build profiles for all companies
+- Not every contact moves to a deal stage
+- You differentiate between contacts and active opportunities
+
+### All Companies
+
+**Best for: Strict deduplication**
+
+Filters out **any company** that exists in HubSpot, regardless of deal status.
+
+**Use Cases:**
+- Exclusively net-new prospect lists
+- Cold outreach campaigns only
+- Strict separation between existing and new
+- Avoid all CRM contacts
+
+**Example:**
+```
+Any cafe in HubSpot → ❌ Will be skipped
+Cafe not in HubSpot → ✅ Will be researched
+```
+
+**When to Use:**
+- Building pure cold outreach lists
+- Want zero overlap with existing CRM
+- Separate teams handle existing vs. new leads
+
+## How Domain Matching Works
+
+HubSpot filtering matches leads using **company domain names**.
+
+### Normalization Process
+
+Flowi automatically normalizes all domain variations:
+
+| Website Input | Normalized Domain |
+|---------------|-------------------|
+| `https://example.com` | `example.com` |
+| `http://www.example.com` | `example.com` |
+| `www.example.com` | `example.com` |
+| `EXAMPLE.COM` | `example.com` |
+| `example.com/about` | `example.com` |
+
+All variations are treated as the same company for accurate matching.
+
+### Matching Logic
+
+**Step 1:** Extract domain from lead website
+- Flowi uses the `website_domain` column (auto-generated)
+- Fallback to manual extraction if needed
+
+**Step 2:** Query HubSpot for matching companies
+- Batch requests for efficiency (6 domains per request)
+- Searches the `domain` field in HubSpot companies
+
+**Step 3:** Check deal associations (if "Companies with Deals" mode)
+- For each matched company, fetch deal associations
+- Only filter out companies with active deals
+
+**Step 4:** Filter results
+- Matched domains are excluded from research
+- Remaining leads proceed to AI research
+
+<Info>The entire filtering process is logged for transparency. Check backend logs for detailed matching information.</Info>
+
+## Enabling Per Agent
+
+Each agent can independently enable/disable HubSpot filtering:
+
+### Enable Filtering
+
+1. Open agent in dashboard
+2. Go to **Filters** section
+3. Find **HubSpot CRM Filter**
+4. Toggle **Enable HubSpot filtering for this agent** ON
+5. Select your preferred filter mode
+6. ✅ Agent will now filter against HubSpot
+
+### Change Filter Mode
+
+To switch between modes:
+
+1. Ensure HubSpot filtering is enabled
+2. Click the **Filter mode** dropdown
+3. Select:
+   - **Companies with Deals** - Skip only companies with deals
+   - **All Companies** - Skip all HubSpot companies
+4. Mode updates immediately
+
+### Disable Filtering
+
+To turn off HubSpot filtering for an agent:
+
+1. Open agent settings
+2. Go to **Filters** section
+3. Toggle **Enable HubSpot filtering** OFF
+4. Agent will no longer filter against HubSpot
+
+<Warning>Disabling removes the filter but keeps your HubSpot connection active for other agents.</Warning>
+
+## Managing Your Connection
+
+### View Connection Status
+
+Check your connection in two places:
+
+**Agent Settings:**
+- Shows "Connected ✓" with account email
+- Displays filter toggle and mode selection
+
+**Settings → Integrations:**
+- Shows connected account email
+- Displays HubSpot Portal ID
+- Shows connection date
+
+### Disconnect HubSpot
+
+<Warning>Disconnecting removes HubSpot for **ALL agents** in your account.</Warning>
+
+To disconnect:
+
+1. Go to **Settings → Integrations**
+2. Click **Disconnect** on HubSpot card
+3. Confirm in the dialog
+4. All agents lose HubSpot filtering capability
+
+**What Happens:**
+- Connection removed account-wide
+- All agent HubSpot filters disabled
+- No leads filtered against HubSpot
+- Can reconnect anytime
+
+### Reconnect HubSpot
+
+If you disconnect and want to reconnect:
+
+1. Follow the connection setup steps again
+2. Per-agent filter settings are preserved
+3. Simply toggle filtering back on per agent
+4. Filter modes remain as previously configured
+
+## Best Practices
+
+### Ensure HubSpot Data Quality
+
+For accurate filtering, maintain clean HubSpot data:
+
+**✅ Do This:**
+- Populate `domain` field for all companies
+- Use consistent domain formatting
+- Keep company records up to date
+- Regularly archive inactive companies
+
+**❌ Avoid This:**
+- Empty domain fields
+- Inconsistent domain formats (some with www, some without)
+- Duplicate company records
+- Outdated contact information
+
+### Choose the Right Mode
+
+Match filter mode to your workflow:
+
+**Use "Companies with Deals" when:**
+- Your CRM has contacts at various stages
+- Not everyone becomes an active opportunity
+- You want to re-engage dormant contacts
+- Research should include non-deal companies
+
+**Use "All Companies" when:**
+- You want pure net-new prospects only
+- Completely separate existing and new lead workflows
+- Cold outreach requires zero CRM overlap
+- Different teams handle existing vs. new
+
+### Monitor Filtering Impact
+
+Track how HubSpot filtering affects your agents:
+
+**Check Backend Logs:**
+```
+[HubSpot Filter] Checking 150 leads against HubSpot CRM...
+[HubSpot Filter] Found 45 companies with deals
+[HubSpot Filter] Filtered out 45, 105 new leads remain
+```
+
+**Adjust Strategy:**
+- If too many filtered → Switch to "Companies with Deals" mode
+- If not enough filtered → Ensure HubSpot domains are populated
+- If none filtered → Verify connection and filter is enabled
+
+### Team Coordination
+
+Since connection is account-level:
+
+**Centralize Management:**
+- Have admin/manager connect HubSpot once
+- All team members can enable per agent
+- Coordinate on filter mode standards
+
+**Avoid Conflicts:**
+- Use HubSpot filtering on territory-specific agents
+- Don't overlap agent search criteria
+- Set different export recipients per agent
+
+## Troubleshooting
+
+### Filter Not Working
+
+**If leads aren't being filtered:**
+
+1. ✅ Verify HubSpot is connected (Settings → Integrations)
+2. ✅ Ensure filter is enabled for that specific agent
+3. ✅ Check HubSpot companies have populated domain fields
+4. ✅ Confirm you're using the correct filter mode
+5. ✅ Review backend logs for matching details
+
+### Too Many Leads Filtered
+
+**If too few leads pass through:**
+
+- Switch from "All Companies" to "Companies with Deals"
+- Check if HubSpot has duplicate company records
+- Verify domain matching is accurate
+- Consider if your CRM coverage is too broad
+
+### Connection Issues
+
+**If you can't connect:**
+
+- Enable popups for Flowi domain
+- Ensure you have HubSpot admin permissions
+- Try connecting from Settings → Integrations
+- Contact support if popup doesn't appear
+
+### Mode Changes Not Applying
+
+**If filter mode doesn't update:**
+
+- Ensure you've selected from the dropdown
+- Refresh the agent settings page
+- Check if filter is toggled ON
+- Try disabling and re-enabling the filter
+
+---
+
+<CardGroup cols={3}>
+  <Card title="HubSpot Integration Docs" icon="book" href="/user-guide/integrations/hubspot">
+    Complete HubSpot integration documentation
+  </Card>
+  
+  <Card title="Creating Agents" icon="plus" href="/user-guide/agents/creating">
+    Set up HubSpot filtering when creating agents
+  </Card>
+  
+  <Card title="Agent Dashboard" icon="grid" href="/user-guide/agents/dashboard">
+    Manage HubSpot filtering in the dashboard
+  </Card>
+</CardGroup>
+

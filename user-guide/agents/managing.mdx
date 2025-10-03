@@ -1,0 +1,384 @@
+---
+title: "Managing Agents"
+description: "Edit, monitor, pause, and optimize your automated agents"
+---
+
+## Editing Agent Settings
+
+Modify any agent configuration after creation:
+
+### How to Edit
+
+1. Open the agent in the Agents dashboard
+2. The settings panel displays automatically
+3. Make changes to any section
+4. Changes save automatically (no manual save needed)
+
+### What You Can Edit
+
+<AccordionGroup>
+  <Accordion title="Search Schedule">
+    **Editable:**
+    - Schedule cadence (Daily, Weekly, etc.)
+    - Specific time of day
+    - Results per run (10, 25, 50, 100)
+    
+    **Not Editable:**
+    - The saved search itself (create new agent for different search)
+  </Accordion>
+  
+  <Accordion title="Research Filters">
+    **Add Filters:**
+    - Select column
+    - Choose operator (equals, contains, greater than, etc.)
+    - Enter value
+    
+    **Remove Filters:**
+    - Click the X on any filter chip
+    
+    **Why Edit:**
+    - Narrow down research targets
+    - Save research credits
+    - Focus on specific lead criteria
+  </Accordion>
+  
+  <Accordion title="HubSpot Filtering">
+    **Toggle On/Off:**
+    - Enable or disable HubSpot filtering per agent
+    
+    **Change Mode:**
+    - Switch between "Companies with Deals" and "All Companies"
+    
+    **Connection:**
+    - Can't change connection per agent (account-level)
+    - Disconnect affects all agents
+  </Accordion>
+  
+  <Accordion title="Research Questions">
+    **Add Questions:**
+    - Select from your question history
+    - Questions run after filtering
+    
+    **Remove Questions:**
+    - Click the X to remove
+    
+    **Reorder:**
+    - Drag and drop to change execution order
+  </Accordion>
+  
+  <Accordion title="Export Settings">
+    **Enable/Disable:**
+    - Toggle email exports on/off
+    
+    **Recipients:**
+    - Add or remove email addresses
+    - Comma-separated for multiple recipients
+    
+    **Export Filters:**
+    - Add conditions for what gets exported
+    - Only leads matching these filters are emailed
+  </Accordion>
+</AccordionGroup>
+
+## Running Agents Manually
+
+Don't wait for the schedule—trigger agents instantly:
+
+### Quick Run
+
+1. Open agent in dashboard
+2. Click **Run Now** button (top of center panel)
+3. Agent executes immediately
+4. Watch real-time progress in right sidebar
+
+**Manual runs:**
+- Follow same workflow as scheduled runs
+- Don't affect the regular schedule
+- Useful for testing changes
+
+### When to Manual Run
+
+**Testing:**
+- After creating a new agent
+- After changing filters or questions
+- Before setting a recurring schedule
+
+**On-Demand Needs:**
+- Client requests immediate lead list
+- Urgent market intelligence needed
+- Quick validation of search criteria
+
+**Troubleshooting:**
+- Verify agent works after edits
+- Test HubSpot filtering is working
+- Check export delivery
+
+## Pausing & Activating
+
+Temporarily disable agents without deleting them:
+
+### Pause an Agent
+
+1. Open agent in dashboard
+2. Click **Pause** button
+3. Confirm in dialog
+4. Agent status → "Paused 😴"
+
+**What Happens:**
+- No automated runs occur
+- All settings preserved
+- Agent appears in "Paused" tab
+- Can be reactivated anytime
+
+**When to Pause:**
+- Seasonal business (off-season)
+- Agent reaching exhaustion frequently
+- Need to revise search criteria
+- Temporary budget constraints
+
+### Activate a Paused Agent
+
+1. Open paused agent
+2. Click **Activate** button
+3. Confirm in dialog
+4. Agent status → "Active ⚡"
+
+**What Happens:**
+- Resumes scheduled runs
+- Next run occurs at scheduled time
+- No retroactive runs for missed schedules
+
+## Monitoring Performance
+
+Track agent effectiveness using multiple indicators:
+
+### Previous Searches Sidebar
+
+**Key Metrics:**
+
+| Metric | What It Shows | What to Look For |
+|--------|---------------|------------------|
+| **Leads Found** | Number of prospects per run | Consistent volume |
+| **Research Progress** | Status of AI questions | High completion rate |
+| **Export Count** | Leads emailed to team | Qualified leads passing filters |
+| **Run Duration** | Time to complete | Reasonable execution time |
+| **Success Rate** | Runs without errors | Mostly successful |
+
+### Status Indicators
+
+**⚡ Active:**
+- Everything working as expected
+- Runs on schedule successfully
+- No action needed
+
+**😴 Paused:**
+- Intentionally disabled
+- Reactivate when ready
+- No runs occurring
+
+**🔴 Exhausted:**
+- Search finding no new leads
+- Consider action:
+  - Broaden search criteria
+  - Expand geographic area
+  - Adjust industry filters
+  - Pause until market changes
+
+**🔄 Running:**
+- Currently executing
+- Check right sidebar for progress
+- Wait for completion
+
+### Optimization Signals
+
+**Low Lead Count:**
+- Search criteria too narrow
+- Geographic area too small
+- Industry filters too strict
+- **Action:** Broaden search parameters
+
+**Research Failures:**
+- Questions too complex
+- Insufficient credits
+- API rate limits hit
+- **Action:** Simplify questions, check credits
+
+**Low Export Count:**
+- Export filters too strict
+- Research not finding answers
+- HubSpot filtering too aggressive
+- **Action:** Adjust export filters or HubSpot mode
+
+**Slow Run Duration:**
+- Too many research questions
+- Large result set (100 leads)
+- Complex filter logic
+- **Action:** Reduce questions or batch size
+
+## Deleting Agents
+
+Permanently remove agents when no longer needed:
+
+### How to Delete
+
+1. Find agent in left sidebar
+2. Click **⋮** menu icon on agent card
+3. Select **Delete**
+4. Confirm deletion in dialog
+
+<Warning>This action is permanent and cannot be undone.</Warning>
+
+### What Gets Deleted
+
+**Removed:**
+- Agent's search schedule
+- All follow-up question schedules
+- The agent's dedicated View
+- Export configuration
+
+**Preserved:**
+- Previous search results
+- Leads found by the agent
+- Research data already collected
+- Your saved searches (reusable)
+
+### When to Delete
+
+**Good Reasons:**
+- Agent served its purpose (project completed)
+- Search criteria no longer relevant
+- Switching to different approach
+- Consolidating similar agents
+
+**Consider Pausing Instead:**
+- Seasonal business (might reuse later)
+- Temporary budget constraints
+- Testing alternative configurations
+- Waiting for market conditions
+
+## Team Collaboration
+
+### Multi-User Management
+
+For team accounts:
+
+**Visibility:**
+- All team members see all agents
+- Creator name shown on agent cards
+- Filter by creator in left sidebar
+
+**Permissions:**
+- Anyone can edit any agent
+- Anyone can run agents manually
+- Anyone can pause/activate/delete
+
+**Best Practices:**
+- Use consistent naming conventions
+- Document purpose in agent name
+- Coordinate on HubSpot filter modes
+- Set appropriate export recipients
+
+### Naming Conventions
+
+Help teams identify agents quickly:
+
+**Format:**
+```
+[Territory/Vertical] • [Research Type] • [Cadence]
+```
+
+**Examples:**
+- "Boston Cafes • Contact Research • Weekly"
+- "West Coast HVAC • Qualified Leads • Daily"
+- "National Dentists • Insurance Check • Monthly"
+- "Florida Restaurants • Revenue Analysis • Bi-Weekly"
+
+### Territory Assignment
+
+Organize agents by sales territory:
+
+**Strategy:**
+- Agent 1: "NorCal Restaurants" → emails rep-a@company.com
+- Agent 2: "SoCal Restaurants" → emails rep-b@company.com
+- Agent 3: "Nevada Restaurants" → emails rep-c@company.com
+
+**Benefits:**
+- Automated lead distribution
+- Territory-specific research
+- No manual routing needed
+
+### Export Coordination
+
+Avoid duplicate outreach:
+
+**Use HubSpot Filtering:**
+- Prevents overlap with existing CRM
+- Filters by deal status
+- Account-level connection
+
+**Configure Per Agent:**
+- Different recipients per territory
+- Unique export filters per vertical
+- Separate research questions per market
+
+## Tips for Long-Term Success
+
+### Regular Maintenance
+
+**Weekly:**
+- Review exhausted agents
+- Check export counts
+- Monitor run success rates
+
+**Monthly:**
+- Update search criteria if needed
+- Audit research questions
+- Clean up unused agents
+
+**Quarterly:**
+- Evaluate overall agent ROI
+- Consolidate similar agents
+- Update team naming conventions
+
+### Credit Management
+
+**Monitor Usage:**
+- Check credit consumption per agent
+- Identify high-cost agents
+- Optimize research questions
+
+**Reduce Costs:**
+- Use research filters aggressively
+- Enable HubSpot filtering
+- Remove low-value questions
+- Reduce results per run
+
+### Performance Tuning
+
+**For Speed:**
+- Limit research questions (3-5 max)
+- Use smaller batch sizes (10-25 leads)
+- Simplify filter logic
+
+**For Quality:**
+- Add export filters
+- Use HubSpot "Companies with Deals" mode
+- Stack research filters
+- Refine questions for accuracy
+
+---
+
+<CardGroup cols={3}>
+  <Card title="Agent Dashboard" icon="grid" href="/user-guide/agents/dashboard">
+    Explore the dashboard interface
+  </Card>
+  
+  <Card title="HubSpot Filtering" icon="link" href="/user-guide/agents/hubspot-filtering">
+    Optimize CRM filtering settings
+  </Card>
+  
+  <Card title="Creating Agents" icon="plus" href="/user-guide/agents/creating">
+    Build new agents with best practices
+  </Card>
+</CardGroup>
+

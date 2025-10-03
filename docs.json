@@ -47,7 +47,11 @@
           {
             "group": "Agents",
             "pages": [
-              "user-guide/agents"
+              "user-guide/agents/overview",
+              "user-guide/agents/creating",
+              "user-guide/agents/dashboard",
+              "user-guide/agents/hubspot-filtering",
+              "user-guide/agents/managing"
             ]
           },
           {

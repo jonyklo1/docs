@@ -1,0 +1,168 @@
+---
+title: "Creating Agents"
+description: "Step-by-step guide to creating your first automated agent"
+---
+
+## Before You Start
+
+To create an agent, you'll need:
+- At least one **saved search** (from your Search conversations)
+- (Optional) Past **research questions** you want to automate
+- (Optional) **HubSpot connection** for CRM filtering
+
+<Warning>No saved searches? Run a search conversation first and save it before creating an agent.</Warning>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Open Agent Creation">
+    Navigate to the **Agents** dashboard (accessible from the main navigation) and click the **+ Create Agent** button in the top-right corner.
+    
+    <Info>You can also create agents from the Filters panel by clicking the + in the Agents section.</Info>
+  </Step>
+  
+  <Step title="Name Your Agent">
+    Choose a descriptive name that clearly identifies what the agent does.
+    
+    **Examples:**
+    - "Boston Cafes • Weekly Contact Research"
+    - "Phoenix HVAC • Qualified Leads > $1M"
+    - "Austin Vegan Restaurants • Daily Monitor"
+    
+    This name becomes both the View name and appears in your Agents dashboard.
+  </Step>
+  
+  <Step title="Select Saved Search">
+    Pick from your previously saved searches. These are searches you've run in the past and saved for reuse.
+    
+    The saved search determines what types of leads your agent will find.
+  </Step>
+  
+  <Step title="Configure Research Filters (Optional)">
+    Add column-based filters to narrow down which leads will be researched.
+    
+    **Example filters:**
+    - Revenue > $500K
+    - Employee count between 10-50
+    - State = "California"
+    
+    These filters save research credits by focusing only on qualifying leads.
+  </Step>
+  
+  <Step title="Enable HubSpot CRM Filtering (Optional)">
+    If you've connected HubSpot, toggle this on to automatically skip leads already in your CRM.
+    
+    **Choose a filter mode:**
+    - **Companies with Deals** - Only skip companies that have active deals (default)
+    - **All Companies** - Skip any company that exists in HubSpot
+    
+    <Tip>Learn more in the [HubSpot Filtering](/user-guide/agents/hubspot-filtering) guide.</Tip>
+  </Step>
+  
+  <Step title="Add Research Questions (Optional)">
+    Select one or more of your past questions. After the search completes, the agent runs these for every qualifying lead.
+    
+    **Common research questions:**
+    - "What is the owner or GM's name and contact email?"
+    - "What's the estimated annual revenue?"
+    - "What are their delivery or distribution channels?"
+    - "Who is the decision maker for [your product category]?"
+  </Step>
+  
+  <Step title="Set Schedule & Limits">
+    Configure when and how often your agent runs:
+    
+    - **Cadence:** Daily, Weekdays, Weekly, Monthly, or Custom cron
+    - **Time:** Choose specific time (uses your local timezone)
+    - **Results per run:** 10, 25, 50, or 100 leads
+    
+    <Info>Start conservative (daily or weekly) and adjust based on lead volume.</Info>
+  </Step>
+  
+  <Step title="Configure Email Exports (Optional)">
+    Enable email exports to automatically send results to your team:
+    
+    - Toggle "Enable email exports"
+    - Add recipient email addresses (comma-separated)
+    - Optionally add export filters to only send specific leads
+    
+    Emails are sent after all research completes.
+  </Step>
+  
+  <Step title="Review & Create">
+    Review the summary of your agent configuration and click **Create Agent**.
+    
+    Flowi automatically creates:
+    - A dedicated View with your filters
+    - A search schedule on your chosen cadence
+    - Follow-up schedules for each research question
+    - Export settings (if enabled)
+  </Step>
+</Steps>
+
+## What Happens Next?
+
+Once created, your agent:
+
+1. **Appears in the Agents dashboard** with "Active" status
+2. **Waits for the first scheduled run** (or you can run it manually)
+3. **Executes the workflow** when triggered:
+   - Finds leads via saved search
+   - Applies research filters
+   - Checks HubSpot (if enabled)
+   - Runs AI research questions
+   - Applies export filters
+   - Sends email exports
+
+## Best Practices
+
+### Start Small
+Begin with conservative settings:
+- 10-25 leads per run
+- Weekly or daily cadence
+- 1-2 research questions
+
+Scale up once you verify the agent works as expected.
+
+### Use Descriptive Names
+Follow a naming convention for easy identification:
+
+**Format:** `[Territory/Vertical] • [Research Type] • [Cadence]`
+
+**Examples:**
+- "Boston Cafes • Contact Research • Weekly"
+- "West Coast HVAC • Qualified Leads • Daily"
+- "National Dentists • Insurance Check • Monthly"
+
+### Layer Your Filters
+
+Maximize efficiency by filtering at multiple stages:
+
+1. **Research Filters** - Remove unqualified leads before research
+2. **HubSpot Filter** - Skip known CRM contacts
+3. **Export Filters** - Only email the best leads
+
+### Test Before Automating
+
+Before setting a recurring schedule:
+1. Create the agent with "One-time" cadence
+2. Run it manually to verify results
+3. Adjust filters and questions as needed
+4. Update to recurring cadence once satisfied
+
+---
+
+<CardGroup cols={3}>
+  <Card title="View Your Agents" icon="grid" href="/user-guide/agents/dashboard">
+    Explore the Agents dashboard and monitor performance
+  </Card>
+  
+  <Card title="HubSpot Filtering" icon="link" href="/user-guide/agents/hubspot-filtering">
+    Set up CRM filtering to skip existing contacts
+  </Card>
+  
+  <Card title="Managing Agents" icon="sliders" href="/user-guide/agents/managing">
+    Learn how to edit, pause, and monitor your agents
+  </Card>
+</CardGroup>
+

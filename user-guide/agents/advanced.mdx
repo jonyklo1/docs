@@ -1,0 +1,492 @@
+---
+title: "Advanced Strategies"
+description: "Advanced filtering techniques, optimization tips, and troubleshooting"
+---
+
+## Multi-Stage Filtering
+
+Stack filters at different stages for maximum precision and credit efficiency:
+
+### The Perfect Filter Stack
+
+```
+🔍 Search: "Coffee shops in California"
+   ↓
+🎯 Research Filter: Revenue > $250K
+   ↓ (Saves credits on small shops)
+🔗 HubSpot Filter: Skip companies with deals
+   ↓ (Avoids active prospects)
+🤖 Research: Owner name, contact email
+   ↓
+🧰 Export Filter: Only shops with confirmed email
+   ↓ (Ensures contactable leads)
+📧 Email: Send to sales team
+```
+
+### Why It Works
+
+**Stage 1: Search**
+- Casts wide net for potential leads
+- Uses saved search criteria
+
+**Stage 2: Research Filters**
+- Narrows to qualified prospects BEFORE research
+- Saves credits by filtering early
+- Example: Revenue, employee count, state
+
+**Stage 3: HubSpot Filter**
+- Removes known CRM contacts
+- Prevents duplicate outreach
+- Happens before AI research (no credit waste)
+
+**Stage 4: Research**
+- AI only researches qualified, net-new leads
+- Credits spent on valuable prospects only
+
+**Stage 5: Export Filters**
+- Final quality check before emailing
+- Only send actionable leads
+- Example: Must have email, must have decision maker name
+
+**Stage 6: Export**
+- Deliver highly qualified leads to team
+- Maximum conversion potential
+
+### Example Configurations
+
+<Accordion title="High-Value B2B Outreach">
+  **Goal:** Find qualified enterprise prospects
+  
+  **Search:** "SaaS companies in North America"
+  
+  **Research Filters:**
+  - Employee count: 100-500
+  - Revenue: > $10M
+  - Industry: Technology
+  
+  **HubSpot:** All Companies mode
+  
+  **Research Questions:**
+  - "Who is the VP of Sales or CRO?"
+  - "What's their current tech stack?"
+  - "Do they use [competitor product]?"
+  
+  **Export Filters:**
+  - Decision maker name: is not empty
+  - Current tech stack: contains "[your category]"
+  
+  **Result:** Qualified enterprise leads with decision maker info
+</Accordion>
+
+<Accordion title="Local SMB Territory Mapping">
+  **Goal:** Build comprehensive local business lists
+  
+  **Search:** "Restaurants in Chicago"
+  
+  **Research Filters:**
+  - Type: Restaurant
+  - City: Chicago
+  
+  **HubSpot:** Companies with Deals mode
+  
+  **Research Questions:**
+  - "What's the owner or manager's name?"
+  - "What's their contact email or phone?"
+  - "How many locations do they have?"
+  
+  **Export Filters:**
+  - Contact email: is not empty
+  
+  **Result:** Contactable restaurant owners not in active deals
+</Accordion>
+
+<Accordion title="Market Intelligence Monitoring">
+  **Goal:** Track new market entrants
+  
+  **Search:** "Electric vehicle startups in California"
+  
+  **Research Filters:**
+  - State: California
+  - Founded: After 2020
+  
+  **HubSpot:** All Companies mode
+  
+  **Research Questions:**
+  - "What's their primary product or service?"
+  - "How much funding have they raised?"
+  - "Who are their key investors?"
+  
+  **Export Filters:**
+  - Funding raised: > $1M
+  
+  **Result:** Well-funded new EV companies not in CRM
+</Accordion>
+
+## Territory-Based Agent Strategy
+
+Create location-specific agents for organized lead distribution:
+
+### Setup
+
+**Agent Structure:**
+```
+Agent 1: "NorCal Restaurants • Weekly Contact Research"
+  → Search: Restaurants in Northern California
+  → Export to: rep-north@company.com
+
+Agent 2: "SoCal Restaurants • Weekly Contact Research"  
+  → Search: Restaurants in Southern California
+  → Export to: rep-south@company.com
+
+Agent 3: "Nevada Restaurants • Weekly Contact Research"
+  → Search: Restaurants in Nevada
+  → Export to: rep-nevada@company.com
+```
+
+### Benefits
+
+**Automated Distribution:**
+- Leads automatically route to correct rep
+- No manual assignment needed
+- Territory owners get their leads directly
+
+**Territory Intelligence:**
+- Each rep sees only their region
+- Can track regional trends
+- Customize research per market
+
+**Scalability:**
+- Add new territories easily
+- Clone existing agents
+- Maintain consistency across regions
+
+### Best Practices
+
+1. **Use identical research questions** across territories for consistency
+2. **Set same HubSpot filter mode** to ensure fair distribution
+3. **Match cadence** so all territories get leads simultaneously
+4. **Use clear naming** to identify territory instantly
+
+## Seasonal Monitoring Strategy
+
+Adjust agent behavior based on business cycles:
+
+### High Season (Peak Demand)
+
+**Configuration:**
+- **Cadence:** Daily runs
+- **Results per run:** 50-100 leads
+- **Research questions:** 3-5 key questions
+- **Export:** Immediate delivery
+
+**Goal:** Catch opportunities quickly, maximize coverage
+
+### Low Season (Moderate Activity)
+
+**Configuration:**
+- **Cadence:** Weekly runs
+- **Results per run:** 25-50 leads  
+- **Research questions:** 2-3 essential questions
+- **Export:** Batch weekly delivery
+
+**Goal:** Maintain pipeline, conserve credits
+
+### Off Season (Minimal Activity)
+
+**Configuration:**
+- **Status:** Paused
+- **Alternative:** Monthly runs at 10 leads
+- **Research questions:** 1-2 critical questions
+- **Export:** Monthly summary
+
+**Goal:** Minimal spend, stay informed of market
+
+## Credit Optimization Techniques
+
+Maximize ROI on research credits:
+
+### 1. Aggressive Pre-Filtering
+
+**Before:**
+```
+Search: 500 leads found
+→ Research all 500 (500 credits)
+→ Only 50 qualify for export
+Cost: 500 credits for 50 good leads = 10 credits per qualified lead
+```
+
+**After:**
+```
+Search: 500 leads found
+→ Research Filter: Revenue > $500K (removes 350)
+→ HubSpot Filter: Skip existing (removes 100)
+→ Research remaining 50 (50 credits)
+→ 45 qualify for export
+Cost: 50 credits for 45 good leads = 1.1 credits per qualified lead
+```
+
+**Savings: 90% reduction in credit spend**
+
+### 2. Question Consolidation
+
+**Instead of 5 separate questions:**
+- "What's the owner's name?"
+- "What's the owner's email?"
+- "What's the company phone?"
+- "What's the company revenue?"
+- "How many employees?"
+
+**Use 2 consolidated questions:**
+- "What's the owner or decision maker's name and email?"
+- "What's the company revenue and employee count?"
+
+**Savings: 60% fewer question runs**
+
+### 3. Smart Batch Sizing
+
+**Small Batches (10-25 leads):**
+- ✅ Faster execution
+- ✅ Test configurations quickly
+- ✅ Lower risk if settings wrong
+- ❌ More frequent runs
+
+**Large Batches (50-100 leads):**
+- ✅ Fewer run overhead
+- ✅ More leads per execution
+- ❌ Slower execution
+- ❌ Higher cost if settings wrong
+
+**Recommendation:** Start small (10-25), scale to 50-100 once optimized
+
+### 4. Export Filter Efficiency
+
+**Inefficient:**
+```
+Research all leads → Filter in export → Low delivery rate
+```
+
+**Efficient:**
+```
+Research filters → HubSpot → Research → Export filters → High delivery rate
+```
+
+Always filter BEFORE research when possible
+
+### 5. HubSpot Mode Selection
+
+**"All Companies" mode:**
+- Filters more aggressively
+- Fewer leads to research
+- Lower credit consumption
+- Best for pure net-new
+
+**"Companies with Deals" mode:**
+- Filters selectively
+- More leads to research
+- Higher credit use (but more comprehensive)
+- Best for re-engagement
+
+Choose based on your goal, not just to save credits
+
+## Advanced HubSpot Strategies
+
+### Dual-Mode Agent Setup
+
+Create two agents for the same search with different HubSpot modes:
+
+**Agent 1: Net-New Prospects**
+- HubSpot: All Companies mode
+- Purpose: Pure cold outreach
+- Export to: SDR team
+
+**Agent 2: Re-Engagement**
+- HubSpot: Companies with Deals mode
+- Purpose: Dormant prospect research
+- Export to: Account management team
+
+**Result:** Comprehensive coverage without overlap
+
+### Domain-Based Segmentation
+
+Leverage domain matching for smart filtering:
+
+**Use Case:** Enterprise vs. SMB
+- Agent 1: Filter out enterprise domains (Forbes 500)
+- Agent 2: Filter out SMB domains (< 50 employees)
+- Result: Targeted research per segment
+
+## Troubleshooting
+
+### Agent Not Finding New Leads
+
+**Symptoms:**
+- Exhausted status
+- Zero leads per run
+- Empty search results
+
+**Solutions:**
+
+<Steps>
+  <Step title="Check Search Criteria">
+    - Is the search too narrow?
+    - Try broader geographic area
+    - Expand industry categories
+    - Reduce filter restrictions
+  </Step>
+  
+  <Step title="Review Research Filters">
+    - Are filters too strict?
+    - Remove some conditions
+    - Broaden value ranges
+    - Check for conflicting filters
+  </Step>
+  
+  <Step title="Verify HubSpot Mode">
+    - Is "All Companies" too aggressive?
+    - Switch to "Companies with Deals"
+    - Check HubSpot for duplicate records
+    - Verify domain matching
+  </Step>
+  
+  <Step title="Consider Pausing">
+    - Market may be saturated
+    - Wait for new business openings
+    - Revisit search criteria quarterly
+  </Step>
+</Steps>
+
+### Research Not Running
+
+**Symptoms:**
+- Agent runs but no research occurs
+- Questions show as skipped
+- No research data collected
+
+**Solutions:**
+
+1. **Verify Agent Status**
+   - Must be "Active" not "Paused"
+   - Check schedule is set correctly
+
+2. **Check Research Questions**
+   - At least one question selected?
+   - Questions exist in your history?
+   - Not deleted from question library?
+
+3. **Review Filters**
+   - Are ANY leads passing research filters?
+   - Check HubSpot isn't filtering everything
+   - Verify filter logic is correct
+
+4. **Confirm Credits**
+   - Sufficient research credits available?
+   - Check account credit balance
+   - Purchase more if needed
+
+### Exports Not Sending
+
+**Symptoms:**
+- Research completes successfully
+- But no emails received
+- Export count shows zero
+
+**Solutions:**
+
+1. **Verify Export Settings**
+   - Email exports enabled?
+   - Recipient addresses valid?
+   - No typos in email addresses?
+
+2. **Check Export Filters**
+   - Are filters too restrictive?
+   - Do any leads match export criteria?
+   - Try removing export filters temporarily
+
+3. **Review Research Results**
+   - Did research find answers?
+   - Are required fields populated?
+   - Check for empty research responses
+
+4. **Confirm Completion**
+   - Did ALL research finish?
+   - Any errors in question runs?
+   - Wait for full completion
+
+### HubSpot Filter Not Working
+
+**Symptoms:**
+- Known CRM contacts being researched
+- Filter count shows zero
+- Duplicates in exported leads
+
+**Solutions:**
+
+1. **Verify Connection**
+   - Settings → Integrations
+   - HubSpot shows "Connected"?
+   - Reconnect if needed
+
+2. **Check Agent Settings**
+   - Filter toggled ON for this agent?
+   - Correct filter mode selected?
+   - Not paused or disabled?
+
+3. **Validate HubSpot Data**
+   - Companies have domain fields?
+   - Domains formatted correctly?
+   - No duplicate company records?
+
+4. **Review Backend Logs**
+   - Check filtering messages
+   - Verify domains being matched
+   - Confirm deal associations (if applicable)
+
+### Performance Issues
+
+**Symptoms:**
+- Runs take very long
+- Frequent timeouts
+- Inconsistent execution
+
+**Solutions:**
+
+1. **Reduce Question Count**
+   - Limit to 3-5 essential questions
+   - Consolidate related questions
+   - Remove low-value questions
+
+2. **Lower Batch Size**
+   - Change from 100 to 50 leads
+   - Or 50 to 25 leads
+   - Smaller batches = faster runs
+
+3. **Simplify Filters**
+   - Remove complex filter logic
+   - Use fewer filter conditions
+   - Avoid nested conditions
+
+4. **Check API Limits**
+   - HubSpot API rate limits?
+   - OpenAI rate limits?
+   - Contact support if persistent
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Creating Agents" icon="plus" href="/user-guide/agents/creating">
+    Apply advanced strategies from the start
+  </Card>
+  
+  <Card title="HubSpot Filtering" icon="link" href="/user-guide/agents/hubspot-filtering">
+    Master CRM filtering for credit efficiency
+  </Card>
+  
+  <Card title="Managing Agents" icon="sliders" href="/user-guide/agents/managing">
+    Monitor and optimize agent performance
+  </Card>
+  
+  <Card title="Need Help?" icon="life-ring" href="mailto:jon@getflowi.com">
+    Contact support for advanced configuration help
+  </Card>
+</CardGroup>
+

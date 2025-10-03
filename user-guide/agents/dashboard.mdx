@@ -1,0 +1,228 @@
+---
+title: "Agents Dashboard"
+description: "Monitor and manage all your automated agents in one place"
+---
+
+## Overview
+
+The dedicated Agents dashboard (`/dashboard/agents`) provides a comprehensive view of all your automated workflows with real-time updates and performance tracking.
+
+## Dashboard Layout
+
+### Left Sidebar - Agent List
+
+The left sidebar is your command center for all agents:
+
+**Key Features:**
+- **Quick Stats** - Active, Paused, and Exhausted counts at a glance
+- **Tab Filters** - View All, Active, or Paused agents
+- **Search Bar** - Find agents by name instantly
+- **Creator Filter** - Filter by who created each agent (team accounts)
+- **Status Indicators** - Visual badges for agent status
+
+**Status Types:**
+| Status | Icon | Meaning |
+|--------|------|---------|
+| **Active** | ⚡ | Running on schedule |
+| **Paused** | 😴 | Temporarily disabled |
+| **Exhausted** | 🔴 | No more leads available |
+| **Running** | 🔄 | Currently executing |
+
+**How to Use:**
+1. Click any agent to view details in the center panel
+2. Use the **⋮** menu to delete agents
+3. Filter by status using tabs
+4. Search by name using the search bar
+5. Filter by creator using the filter icon
+
+### Center Panel - Agent Details
+
+When you select an agent, the center panel displays full configuration and controls:
+
+**Quick Actions:**
+- **Run Now** - Trigger immediate execution (bypasses schedule)
+- **Pause/Activate** - Toggle agent on/off with confirmation
+- **Delete** - Permanently remove agent
+
+**Configuration Sections:**
+
+<AccordionGroup>
+  <Accordion title="Search Schedule">
+    - View saved search details
+    - See schedule cadence and timing
+    - Adjust results per run (10, 25, 50, 100)
+    - Update schedule frequency
+  </Accordion>
+  
+  <Accordion title="Research Filters">
+    - View/edit column-based filters
+    - Add new filter conditions
+    - Remove existing filters
+    - Filters apply before research runs (saves credits)
+  </Accordion>
+  
+  <Accordion title="HubSpot CRM Filter">
+    - Connection status (Connected ✓ or Not Connected)
+    - Connect/disconnect HubSpot (account-level)
+    - Toggle filtering on/off per agent
+    - Select filter mode (Companies with Deals vs. All Companies)
+    - View matched domain count
+  </Accordion>
+  
+  <Accordion title="Automated Research">
+    - View selected research questions
+    - Add new questions from history
+    - Remove questions
+    - Questions run after filtering (post-HubSpot)
+  </Accordion>
+  
+  <Accordion title="Export Settings">
+    - Enable/disable email exports
+    - Manage recipient email addresses
+    - Configure export filters (optional)
+    - View export history
+  </Accordion>
+</AccordionGroup>
+
+### Right Sidebar - Previous Searches
+
+The right sidebar shows real-time activity and history:
+
+**What You See:**
+- **All past search runs** in chronological order (newest first)
+- **Status indicators** for each run (Success ✓, Error ✗, Running 🔄)
+- **Leads found** per run with count badges
+- **Research progress** for each run with live updates
+- **Export counts** showing how many leads were emailed
+- **Run duration** and timestamps
+
+**Real-Time Updates:**
+
+The sidebar updates automatically as your agent runs:
+1. Search starts → Status shows "Running 🔄"
+2. Leads found → Count badge appears
+3. Research questions execute → Progress indicators update
+4. Research completes → Status changes to "Success ✓"
+5. Exports send → Export count displays
+
+<Info>No need to refresh! The dashboard uses real-time subscriptions to show live progress.</Info>
+
+## Agent Status Explained
+
+### ⚡ Active
+- Agent is enabled and running on its schedule
+- Automatically executes at configured times
+- Appears in "Active" tab
+- Green success indicator
+
+### 😴 Paused
+- Agent is temporarily disabled
+- No automated runs occur
+- All settings preserved
+- Appears in "Paused" tab
+- Can be reactivated anytime
+
+### 🔴 Exhausted
+- Search has found all available leads
+- Agent continues running but finds no new results
+- Consider:
+  - Expanding search criteria
+  - Broadening geographic area
+  - Adjusting industry filters
+
+### 🔄 Running
+- Agent is currently executing
+- See real-time progress in right sidebar
+- Search or research actively processing
+- Wait for completion before editing
+
+## Using the Dashboard
+
+### Quick Agent Run
+
+Run any agent immediately without waiting for schedule:
+
+1. Select agent from left sidebar
+2. Click **Run Now** button in center panel
+3. Watch progress in right sidebar
+4. Review results when complete
+
+Manual runs follow the same workflow as scheduled runs.
+
+### Monitoring Performance
+
+Track agent effectiveness using the Previous Searches feed:
+
+**Metrics to Watch:**
+- **Leads per run** - Is the search finding enough prospects?
+- **Research completion rate** - Are questions succeeding?
+- **Export counts** - How many leads qualify for export?
+- **Run frequency** - Is the schedule optimal?
+
+**Optimization Signals:**
+- **Low lead count?** → Broaden search criteria
+- **Research failures?** → Simplify questions or check credits
+- **Low export count?** → Adjust export filters
+- **Exhausted status?** → Expand search parameters
+
+### Team Collaboration
+
+For multi-user accounts:
+
+**Creator Visibility:**
+- See who created each agent (shown on agent cards)
+- Filter by creator using the filter icon
+- Useful for team coordination
+
+**Shared Access:**
+- All team members can view all agents
+- Anyone can edit any agent settings
+- Exports can go to multiple recipients
+
+**Best Practice:**
+Use consistent naming conventions so team members can quickly identify:
+- Territory/region assignments
+- Industry/vertical focus
+- Cadence and research type
+
+## Tips & Tricks
+
+### Resizable Sidebars
+
+Customize your workspace:
+- Drag the resize handles between panels
+- Left sidebar: 280px - 600px width
+- Right sidebar: 250px - 700px width
+- Widths persist across sessions
+
+### Keyboard Shortcuts
+
+Navigate efficiently:
+- **Search agents** - Click search bar or start typing
+- **Select agent** - Click card to view details
+- **Quick filter** - Use tabs (All/Active/Paused)
+
+### Mobile View
+
+On mobile devices:
+- Left sidebar becomes full-width
+- Center panel shows selected agent
+- Right sidebar hidden (access via future updates)
+- All core functions available
+
+---
+
+<CardGroup cols={3}>
+  <Card title="Create an Agent" icon="plus" href="/user-guide/agents/creating">
+    Set up your first automated agent in 8 steps
+  </Card>
+  
+  <Card title="HubSpot Filtering" icon="link" href="/user-guide/agents/hubspot-filtering">
+    Configure CRM filtering in the dashboard
+  </Card>
+  
+  <Card title="Managing Agents" icon="sliders" href="/user-guide/agents/managing">
+    Edit, pause, and optimize your agents
+  </Card>
+</CardGroup>
+
